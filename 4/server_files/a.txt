@@ -1,0 +1,212 @@
+I want to make a database management project
+Topic: CSEDU B.Sc Result Management System.
+
+I have to make a complete website, where Student or teacher/admin or others spectator can view comfortably and all 3 types [ 1)student, 2) admin or teacher same, 3) other viewer ] has different interface. When the link will be clicked, the common home page will be seen like:
+
+Header:
+Left Side-[LOGO of DU][Logo of CSEDU] "CSEDU" 
+Right Side- Login, Register
+
+Mid body:
+"WELCOME TO CSEDU"
+'Result Management System'
+
+Use counter box for gratuated student (whose all 8 result are done, then count otherwise not)- 
+CGPA 4, CGPA 3.95-3.99, CGPA 3.9-3.94, CGPA 3.85-3.89, CGPA 3.8-3.84, CGPA 3.75-3.79, CGPA 3.7-3.74, CGPA 3.65-3.69, CGPA 3.6-3.64, 3.55-3.59, 3.5-3.54 
+
+Search: Name or batch number
+[And top 2 toppers name with their CGPA of every batch decreasingly]
+Like(29 batch is current junior batch):
+
+29 BATCH:
+1) Mr. A - 3.96
+2) Mr. B - 3.95
+
+28 Batch...
+
+Footer:
+Home Faculty Officers About 
+
+if we click register, then  there will be a page with at first 2 tick box, if(admin is selected, then view admin register, else if student selected then view student register)
+
+(If student is selected, then want)
+{
+Name: txt
+Fathers Name: txt
+Mothers Name: txt
+Date of Birth: Date
+Gender: Tick (Male or Female)
+Name of School: txt
+Name of college: txt
+Year of Passing HSC: int
+Phone Number: txt
+Personal Mail: a@b.c
+Institutional Mail: a@b.c
+Batch Number: int 
+Class Roll Number: int 
+Registration Number: int
+Name of Hall: Dropdown[6 hall name for CSEDU]
+
+Photo: txt
+Password: random txt
+Confirm Password: random txt
+
+select register after recheck every thing
+
+"Go Back" button, "Register as student" button
+}
+
+{Now if clicked "Register", then a message will be given that, "Your registration is completed. Now wait for admins verification. You will be informed after verification via mail or phone" and if "Ok" is clicked then go to the login page}
+
+{As well as when student will click Register, then all data without password will be stored for admin, and admin will have to verify the info, if admin verified the student, then student can login, otherwise will be said wrong info} 
+
+In the back end code, there will be three valid cheat codeword for admin, if in register admin is selected then he will have to give the three valid cheat code word. If wrong any codeword, the a message will be shown that codes are wrong.
+
+(If the codewords are correct, then proceed to) {
+Name: txt
+Fathers Name: txt
+Mothers Name: txt
+Date of Birth: Date
+Gender: Tick (Male or Female)
+Phone Number: txt
+Personal Mail: a@b.c
+Institutional Mail: a@b.c
+Servant ID No: txt
+Designation: dropdown [Lecturer, Assistant Professor, Associate Professor, Professor, officer/others]
+
+photo:txt
+Password: random txt
+Confirm Password: random txt
+
+select register after recheck every thing
+
+"Go Back" button, "Register as admin" button
+}
+[Admin will not have to be verified, automatically done, and admin can login now, automatically go to login page]
+
+Now, Login:
+User name: [textbox]
+Pass word: [textbox]
+Role: [Tickbox] [if admin is selected then 3 cheat word also have to be given]
+
+Forget password, login
+
+if forget password is pressed then will have give name, personal email address, institutional email address, registration number(if student) or Servant ID No(if admin) and phone number. if all info are correct, then give permission to update new password and confirm pass word. otherwise will be said wrong credentials.
+
+For Student:
+Student only can view his own full result, like in university B.Sc, there will be 8 semester naming(1-1,1-2,2-1,2-2,3-1,3-2,4-1,4-2) here (x-y) means xth year y semester. 
+
+Student view:
+Welcome, "name" from "29" batch. 
+Leftside dashboard:
+1) Your result 
+2) Common result
+3) Admission for exam
+4) Update Profile
+5) Message sent to admin
+6) Notification(for messages)
+7) Logout
+
+*) Your Result:
+if student click on your result, he/she will seen his 8 semester's CGPA and 
+Total CGPA and in in 8 semester will be item boxed. so i will click on that, there will be detailed in that individual semesters all details. 
+
+So mainly 8+1=9 cgpa will be seen and 8 click box can be used.
+Like:
+Student Name: ... Registration Number: ... Exam Roll: ... [exam roll will be given by admin] Class Roll: ...
+
+1) 1st Year 1st Semester - 4
+2) 1st Year 2nd Semester - 3.96
+3) 2nd Year 1st Semester- null (which means only 1-1 and 1-2 is completed, 2-1 is not happened till now)
+......
+8) 4th Year 4th Semester - null
+Total CGPA - [Sum of all GPA of 1-1 + 1-2 devided by sum of course credit of 1-1+ 1-2]
+
+#) If I click any semester, there will be seen all of my theory and lab courses with course credit, course grade, and course cg. besides in only theory courses there will be added marks of incourse out of 30, the rest will not be shown.
+
+So per semester I can seen
+Theory course:
+course name| incourse mark|course grade|course credit|course gpa
+Lab course:
+course name|{here will be gap, so thery grade and lab grade will on same column} |course grade|course credit|course gpa.
+
+Then under credit column, there will be total credit, and under gpa there will be total GPA.
+
+in the last line there will be seen total cgpa= sum of gpa/ sum of credits
+
+*) Common Result: 
+if i select common result, there will be seen all batch's result
+like: 
+29th batch
+28th batch
+...
+1st batch
+
+if i select any batch, there will be seen 
+8 semester and final result and max cgpa of all 9 exams beside every 9 exam. If not held, then use null.
+
+in per semester [8 semester] student can seen
+Theory course:
+course name|max incourse mark(30)|A+|A|A-|B|B-|C|C-|F|max course gpa
+Lab course:
+course name|gap|A+|A|A-|B+|B|B-|C+|C|D|F|max course gpa
+
+and in the last line max CGPA: 
+
+Like:
+{
+Theorey Course:
+FCC|30|40|10|5|1|1|1|1|1|1|4(because 40 persons got A+)
+..
+Lab Course:
+FCC Lab
+FCC|-gap-|40|10|5|1|1|1|1|1|1|4(because 40 persons got A+)
+
+Highest CG from Batch 29 in 1st year 1st semester - (select highest cgpa from database)
+}
+
+So no roll or identification will not be seen.
+
+if student select admission for exam, then he can add course which will be added by admin for specific batch. If student is regular, he can get his own batches courses, if any student got less than GPA 3 in a course, he can get chance for retake in the next batches course, but that will be assigned by admin name Retake Exam for OLD batch.
+
+#) Admin Interface:
+Now teacher/admin interface:
+
+at first same user authentication
+then their will be some options,
+Welcome, "Name", "Designation"
+
+Left side Dash board:
+1) View and update Student list.
+2) Verification student.
+3) Batch wise Result
+4) Insert Exam/Course
+5) Update Profile
+6) Notification(any update of batch result or message to that specific student)
+7) Message with student 
+8) Logout
+
+If view student list is selected he can view all students list with info without students password and with name, mobile number, institutional mail, Total CGPA till now and in the right "Edit" and "Message" button will be seen. Admin can edit any students data(here admin can view when edit is clicked, all data which data are inserted by student in the registration). He can use some qwery box like, batch-dropdown box(all, 29,28,...,1), gender- dropdownbox(male,female, all). If admin select any student, admin can view his individual result like, that student view in the same from website, which I said in the past in student section.
+
+Admin can print after qwery. As well as Admin Can print every students per semester + final result with all grade in every page.
+
+If verification is clicked, 
+then admin can view tick box on left, all non verified students info and in the right verify with everyone. Admin can verify individually or he can select by tick someone or he can select all to verify all.
+
+If batch wise result is clicked, at first all batch name will be appeared like button box with max cg of batch as well as there will be add batch button
+
+If clicked a batch, then 8 result + 1 final result box will be shown, with max CGPA. And if any result box is clicked, then all course name will be shown in that specific semester, as well as there will be add course button. If blank then it will be written that, the semester is not started even now. 
+
+If select any course, then all students course result will be seen with their exam roll, reg umber, class roll, name, incourse marks(30), exam mark(70), total mark(100), letter grade, credit, number grade, in decresing way in terms of mars (biggest marks on top, for same marks, merge with class roll) 
+
+and in the last, max total marks , max letter grade and max number grade will be seen. He can also update any marks.
+
+in insert course, he can add course type(lab or theory), course name, course for the batch. He will have add also all the same course for retake again in the retake batch, but the result will be changed in main result.
+
+GRADE 
+A+ = 4.00, A = 3.75, A- = 3.50, B+ = 3.25, B= 3.00, B- = 2.75, C+ = 2.50, C = 2.25, D = 2.00, F = 0.00
+
+Now try to use php and mysql for project.....
+
+
+
