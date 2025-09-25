@@ -1,1 +1,0 @@
-Hello everyone. This message is from server. If you view this from client side, then the file is successfully transferred.
